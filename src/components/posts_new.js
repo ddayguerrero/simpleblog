@@ -9,8 +9,9 @@ class PostsNew extends Component{
         <input
           className="form-control"
           type="text"
-          {... field.input}
+          {...field.input}
         />
+        {field.meta.error}
       </div>
     );
   }
@@ -32,6 +33,8 @@ class PostsNew extends Component{
           label="Post Content"
           name="content"
           component={this.renderField} />
+
+      <button type="submit" className="btn btn-primary">Submit</button>
       </form>    
     );
   }
@@ -49,7 +52,7 @@ function validate(values){
   }
 
   if(!values.content){
-    errors.title = "Enter some content!";
+    errors.content = "Enter some content!";
   }
 
   return errors;
