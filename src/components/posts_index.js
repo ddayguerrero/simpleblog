@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions';
 
 class PostsIndex extends Component {
+    // automatically called when DOM is rendered
     componentDidMount(){
         this.props.fetchPosts();
     };
